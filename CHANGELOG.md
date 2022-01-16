@@ -2,6 +2,10 @@
 
 # Changelog
 
+## v0.4.0 (2022-1-xx)
+
+- RList.Ruby
+
 ## v0.3.0 (2022-1-16)
 
 ### Breaking changes
