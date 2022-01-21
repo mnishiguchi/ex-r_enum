@@ -7,9 +7,16 @@ defmodule RList.Ruby do
     RUtils.define_all_functions!(__MODULE__)
   end
 
+  def zip(first, second) do
+    max_len = max(length(first), length(second))
+
+    Enum.reduce(0..(max_len - 1), [], fn x, acc ->
+      [{Enum.at(first, x), Enum.at(second, x)} | acc]
+    end)
+    |> Enum.reverse()
+  end
+
   # aliases
 
   defdelegate transpose(list_of_lists), to: List, as: :zip
-
-  defdelegate zip(first, second), to: Enum, as: :zip
 end
